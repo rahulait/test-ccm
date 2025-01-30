@@ -1,0 +1,19 @@
+name: test
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$EVENT"
+        env:
+          EVENT: ${{toJSON(github)}}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run the script
+        run: make test
+        env:
+          SECRET1: ${{ secrets.SECRET1 }}
