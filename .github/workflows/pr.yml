@@ -1,9 +1,9 @@
 name: test
 on:
-  pull_request_target: # Use pull_request_target
-    branches: [ '*' ]
+  pull_request:
+
 jobs:
-  test:
+  pull_request:
     runs-on: ubuntu-latest
     steps:
       - run: echo "$EVENT"
