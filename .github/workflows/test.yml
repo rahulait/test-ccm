@@ -9,3 +9,14 @@ jobs:
       - run: echo "$EVENT"
         env:
           EVENT: ${{toJSON(github)}}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Give execute permissions
+        run: chmod +x script.sh
+
+      - name: Run the script
+        run: ./script.sh
+        env:
+          SECRET1: ${{ secrets.SECRET1 }}
