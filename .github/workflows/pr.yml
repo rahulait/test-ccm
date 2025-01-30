@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  pull_request:
     runs-on: ubuntu-latest
     steps:
       - run: echo "$EVENT"
