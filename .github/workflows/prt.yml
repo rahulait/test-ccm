@@ -5,6 +5,7 @@ on:
 jobs:
   pull_request_target:
     runs-on: ubuntu-latest
+    environment: DEV
     steps:
       - run: echo "$EVENT"
         env:
