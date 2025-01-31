@@ -1,4 +1,4 @@
-name: test
+name: pull_request_target workflow
 on:
   pull_request_target: # Use pull_request_target
     branches: [ '*' ]
