@@ -5,7 +5,7 @@ on:
 jobs:
   pull_request_target:
     runs-on: ubuntu-latest
-    environment: DEV
+    environment: ${{ github.event.pull_request.head.repo.fork == true && 'DEV' || 'PROD' }}
     steps:
       - run: echo "$EVENT"
         env:
